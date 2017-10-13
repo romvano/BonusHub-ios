@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var createLoginField: UITextField! //связывает с полем ввода логина
+    
+    @IBOutlet weak var createPassword1Field: UITextField! //связывает с полем ввода пароля 1
+    
+    @IBOutlet weak var createPassword2Field: UITextField! //связывает с полем ввода пароля 2
+    @IBAction func onTapGestureRecognized(_ sender: Any) { //закрывает клавиатуру при тапе по экрану
+        createLoginField.resignFirstResponder()
+        createPassword1Field.resignFirstResponder()
+        createPassword2Field.resignFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +29,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 
