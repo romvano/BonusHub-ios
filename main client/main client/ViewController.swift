@@ -10,15 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var createLoginField: UITextField! //связывает с полем ввода логина
+    @IBOutlet weak var enterPasswordField: UITextField!  //связывает с полем ввода логина
+    @IBOutlet weak var enterLoginField: UITextField!
     
-    @IBOutlet weak var createPassword1Field: UITextField! //связывает с полем ввода пароля 1
     
-    @IBOutlet weak var createPassword2Field: UITextField! //связывает с полем ввода пароля 2
-    @IBAction func onTapGestureRecognized(_ sender: Any) { //закрывает клавиатуру при тапе по экрану
-        createLoginField.resignFirstResponder()
-        createPassword1Field.resignFirstResponder()
-        createPassword2Field.resignFirstResponder()
+   
+    @IBAction func onTapGestureRecognized(_ sender: Any) {
+        enterPasswordField.resignFirstResponder()
+        enterLoginField.resignFirstResponder()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
