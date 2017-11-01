@@ -14,15 +14,13 @@ let OBJECT_ID_LENGTH = 24
 class UserModel {
     var uid: String!
     var login: String!
-    var workplace: String?
     
-    init? (uid: String!, login: String!, workplace: String?) {
+    init? (uid: String!, login: String!) {
         if !isObjectId(s: uid) {
             return nil
         }
         self.uid = uid
         self.login = login
-        self.workplace = workplace
     }
     
     func fetch() {

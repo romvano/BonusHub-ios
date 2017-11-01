@@ -39,10 +39,13 @@ class UserAPI {
             
             let data = response.result.value as? NSDictionary
             let user_uid = data?.object(forKey: "user_id") as! String?
-            let host_uid = data?.object(forKey: "host_id") as! String?
-            let user = UserModel(uid: user_uid!, login: login, workplace: host_uid)
+            let user = UserModel(uid: user_uid!, login: login)
             user?.saveLocally()
             onResult(code, user)
         }
+    }
+    
+    func register(login: String!, pwd: String!, onResult: @escaping(Int?) -> Void) {
+        
     }
 }
