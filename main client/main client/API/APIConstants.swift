@@ -13,4 +13,5 @@ struct API {
     
     static let OK = 200
     static let FORBIDDEN = 403
+    static let CONFLICT = 409
 }

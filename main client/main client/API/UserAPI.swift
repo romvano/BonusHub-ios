@@ -46,6 +46,60 @@ class UserAPI {
     }
     
     func register(login: String!, pwd: String!, onResult: @escaping(Int?) -> Void) {
+        /*
+         * Returns:
+         *     nil if request failed
+         *     200 if ok
+         *     403 if already authed
+         *     409 if user with this login already exists
+         */
         
+        let params: Parameters = [
+            "login": login,
+            "password": pwd
+        ]
+        Alamofire.request(USER_URL + "register/", method: .post, parameters: params).responseJSON { response in
+            guard response.result.error == nil else {
+                onResult(nil)
+                return
+            }
+            
+            let code = response.response?.statusCode
+            guard code == API.OK else {
+                onResult(code)
+                return
+            }
+            
+            let resultCode = (response.result.value as? NSDictionary).object(forKey: "code") as! Int?
+            if resultCode == 0 {
+                onResult(API.OK)
+            } else {
+                onResult(API.FORBIDDEN)
+            }
+        }
+    }
+    
+    func logout(onResult: @escaping(Int?) -> Void) {
+        /*
+         * Returns:
+         *     nil if request failed
+         *     200 if ok
+         *     401 if not authed
+         */
+        
+        Alamofire.request(USER_URL + "logout/", method: .post).responseJSON { response in
+            guard response.result.error == nil else {
+                onResult(nil)
+                return
+            }
+            
+            let code = response.response?.statusCode
+            guard code == API.OK else {
+                onResult(code)
+                return
+            }
+            
+            onResult(code)
+        }
     }
 }

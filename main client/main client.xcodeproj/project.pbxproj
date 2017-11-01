@@ -12,8 +12,6 @@
 		092E54451FA7595600573158 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E54441FA7595600573158 /* LogInViewController.swift */; };
 		092E54471FA7597900573158 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E54461FA7597900573158 /* SignUpViewController.swift */; };
 		092E544D1FA76B9F00573158 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E544C1FA76B9F00573158 /* NavigationController.swift */; };
-		8413168D1FAA214C0011C5DC /* API in Resources */ = {isa = PBXBuildFile; fileRef = 8413168C1FAA214C0011C5DC /* API */; };
-		8413168F1FAA21870011C5DC /* models in Resources */ = {isa = PBXBuildFile; fileRef = 8413168E1FAA21870011C5DC /* models */; };
 		99A7AE661F8FA4B000964402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE651F8FA4B000964402 /* AppDelegate.swift */; };
 		99A7AE681F8FA4B000964402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE671F8FA4B000964402 /* ViewController.swift */; };
 		99A7AE6B1F8FA4B000964402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A7AE691F8FA4B000964402 /* Main.storyboard */; };
@@ -46,8 +44,6 @@
 		092E54441FA7595600573158 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		092E54461FA7597900573158 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		092E544C1FA76B9F00573158 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		8413168C1FAA214C0011C5DC /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
-		8413168E1FAA21870011C5DC /* models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = models; sourceTree = "<group>"; };
 		99A7AE621F8FA4B000964402 /* main client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "main client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A7AE651F8FA4B000964402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99A7AE671F8FA4B000964402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +107,6 @@
 		99A7AE641F8FA4B000964402 /* main client */ = {
 			isa = PBXGroup;
 			children = (
-				8413168E1FAA21870011C5DC /* models */,
-				8413168C1FAA214C0011C5DC /* API */,
 				99A7AE651F8FA4B000964402 /* AppDelegate.swift */,
 				99A7AE671F8FA4B000964402 /* ViewController.swift */,
 				092E54401FA7432B00573158 /* MenuViewController.swift */,
@@ -253,9 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8413168F1FAA21870011C5DC /* models in Resources */,
 				99A7AE701F8FA4B000964402 /* LaunchScreen.storyboard in Resources */,
-				8413168D1FAA214C0011C5DC /* API in Resources */,
 				99A7AE6D1F8FA4B000964402 /* Assets.xcassets in Resources */,
 				99A7AE6B1F8FA4B000964402 /* Main.storyboard in Resources */,
 			);
@@ -455,7 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34PL8GRUEQ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "main client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tonitrui.main-client";
@@ -470,7 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34PL8GRUEQ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "main client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tonitrui.main-client";
