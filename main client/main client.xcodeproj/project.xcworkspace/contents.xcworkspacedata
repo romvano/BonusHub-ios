@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../main client/models/common.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../main client/models/UserModel.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../main client/API/APIConstants.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../main client/API/UserAPI.swift">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

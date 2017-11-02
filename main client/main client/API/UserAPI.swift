@@ -70,7 +70,7 @@ class UserAPI {
                 return
             }
             
-            let resultCode = (response.result.value as? NSDictionary).object(forKey: "code") as! Int?
+            let resultCode = (response.result.value as! NSDictionary?)?.object(forKey: "code") as! Int?
             if resultCode == 0 {
                 onResult(API.OK)
             } else {

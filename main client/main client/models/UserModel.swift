@@ -9,8 +9,6 @@
 import UIKit
 import Alamofire
 
-let OBJECT_ID_LENGTH = 24
-
 class UserModel {
     var uid: String!
     var login: String!

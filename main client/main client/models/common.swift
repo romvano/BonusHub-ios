@@ -8,6 +8,8 @@
 
 import UIKit
 
+let OBJECT_ID_LENGTH = 24
+
 func isObjectId(s: String?) -> Bool {
     guard s != nil, s!.count == OBJECT_ID_LENGTH else {
         return false
