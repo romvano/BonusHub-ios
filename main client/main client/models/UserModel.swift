@@ -10,10 +10,10 @@ import UIKit
 import Alamofire
 
 class UserModel {
-    var uid: String!
-    var login: String!
+    let uid: String
+    var login: String
     
-    init? (uid: String!, login: String!) {
+    init? (uid: String!, login: String) {
         if !isObjectId(s: uid) {
             return nil
         }
@@ -28,4 +28,5 @@ class UserModel {
     func saveLocally() {
         
     }
+    
 }

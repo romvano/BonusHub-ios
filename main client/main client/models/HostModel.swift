@@ -6,4 +6,42 @@
 //  Copyright © 2017 Daria Firsova. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class HostModel {
+    var uid: String
+    var title: String
+    var description: String?
+    var address: String?
+    var latitude: Float64?
+    var longitude: Float64?
+    var offer: String?
+    var timeOpen: NSDate?
+    var timeClose: NSDate?
+    var profileImage: NSURL?
+    var points: Float
+    var loyalityType: Int
+    var loyalityParam: Int
+    
+    init? (uid: String, title: String, description: String?, address: String?,
+           latitude: Float64?, longitude: Float64?, offer: String?,
+           timeOpen: NSDate?, timeClose: NSDate?, profileImage: NSURL?,
+           points: Float, loyalityType: Int, loyalityParam: Int) {
+        guard isObjectId(s: uid) else {
+            return nil
+        }
+        self.uid = uid
+        self.title = title
+        self.description = description
+        self.address = address
+        self.latitude = latitude
+        self.longitude = longitude
+        self.offer = offer
+        self.timeOpen = timeOpen
+        self.timeClose = timeClose
+        self.profileImage = profileImage
+        self.points = points
+        self.loyalityType = loyalityType
+        self.loyalityParam = loyalityParam
+    }
+}
