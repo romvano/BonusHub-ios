@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class ClientAPI {
     let CLIENT_URL = API.BASE_URL + "client/"
@@ -103,6 +104,53 @@ class ClientAPI {
         }
     }
     
-    // TODO: get info (client)
-    // TODO: media
+    func getClientInfo(onResult: @escaping(Int?, UserModel?) -> Void) {
+        Alamofire.request(CLIENT_URL + "get_info/", method: .get).responseJSON { response in
+            guard response.result.error == nil else {
+                onResult(nil, nil)
+                return
+            }
+            
+            let code = response.response?.statusCode
+            guard code == API.OK else {
+                onResult(response.response!.statusCode, nil)
+                return
+            }
+            
+            let data = response.result.value as? NSDictionary
+            let user_uid = data?.object(forKey: "user_id") as? String
+            let login = data?.object(forKey: "name") as? String
+            let user = UserModel(uid: user_uid, login: login)
+            user?.saveLocally()
+            onResult(code, user)
+        }
+    }
+
+    func getHostLogo(hostUid: String, onResult: @escaping(Int?, Image?) -> Void) {
+        let url = URLRequest(url: URL(string: CLIENT_URL + "media/" + hostUid)!)
+        Alamofire.request(url).responseImage { response in
+            guard response.result.error == nil else {
+                onResult(nil, nil)
+                return
+            }
+            
+            let code = response.response?.statusCode
+            guard code == API.OK else {
+                onResult(code, nil)
+                return
+            }
+            
+            guard let image = response.result.value else {
+                onResult(code, nil)
+                return
+            }
+            
+            let cache = AutoPurgingImageCache(
+                memoryCapacity: 100_000_000,
+                preferredMemoryUsageAfterPurge: 60_000_000
+            )
+            cache.add(image, for: url)
+            onResult(code, image)
+        }
+    }
 }

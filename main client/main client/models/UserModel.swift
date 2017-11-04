@@ -9,16 +9,16 @@
 import UIKit
 import Alamofire
 
-class UserModel {
+class UserModel: NSObject {
     let uid: String
     var login: String
     
-    init? (uid: String!, login: String) {
-        if !isObjectId(s: uid) {
+    init? (uid: String?, login: String?) {
+        guard isObjectId(s: uid), login != nil else {
             return nil
         }
-        self.uid = uid
-        self.login = login
+        self.uid = uid!
+        self.login = login!
     }
     
     func fetch() {
