@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class ClientAPI {
     let CLIENT_URL = API.BASE_URL + "client/"
@@ -124,5 +125,32 @@ class ClientAPI {
             onResult(code, user)
         }
     }
-    // TODO: media
+
+    func getHostLogo(hostUid: String, onResult: @escaping(Int?, Image?) -> Void) {
+        let url = URLRequest(url: URL(string: CLIENT_URL + "media/" + hostUid)!)
+        Alamofire.request(url).responseImage { response in
+            guard response.result.error == nil else {
+                onResult(nil, nil)
+                return
+            }
+            
+            let code = response.response?.statusCode
+            guard code == API.OK else {
+                onResult(code, nil)
+                return
+            }
+            
+            guard let image = response.result.value else {
+                onResult(code, nil)
+                return
+            }
+            
+            let cache = AutoPurgingImageCache(
+                memoryCapacity: 100_000_000,
+                preferredMemoryUsageAfterPurge: 60_000_000
+            )
+            cache.add(image, for: url)
+            onResult(code, image)
+        }
+    }
 }
