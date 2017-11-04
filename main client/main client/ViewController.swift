@@ -8,33 +8,76 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+@objcMembers class ViewController: UIViewController {
 
-    @IBOutlet weak var enterLoginField: UITextField!
-    @IBOutlet weak var enterPasswordField: UITextField!
-    @IBOutlet weak var createLoginField: UITextField! //связывает с полем ввода логина
+    @IBOutlet weak var menuBarButtonItem: UIBarButtonItem!
     
-    @IBOutlet weak var createPassword1Field: UITextField! //связывает с полем ввода пароля 1
+    var menuVC: MenuViewController!
     
-    @IBOutlet weak var createPassword2Field: UITextField! //связывает с полем ввода пароля 2
-    @IBAction func TapRecognizer(_ sender: Any) {
-        enterPasswordField.resignFirstResponder()
-        enterLoginField.resignFirstResponder()
-    }
-    @IBAction func onTapGestureRecognized(_ sender: Any) { //закрывает клавиатуру при тапе по экрану
-        createLoginField.resignFirstResponder()
-        createPassword1Field.resignFirstResponder()
-        createPassword2Field.resignFirstResponder()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipe))
+        swipeRight.direction = .right
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipe))
+        swipeLeft.direction = .left
+        
+        self.view.addGestureRecognizer(swipeRight)
+        self.view.addGestureRecognizer(swipeLeft)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func handleSwipe(gesture: UISwipeGestureRecognizer) {
+        switch gesture.direction {
+        case UISwipeGestureRecognizerDirection.right:
+            print("Right")
+            showMenu()
+        case UISwipeGestureRecognizerDirection.left:
+            print("Left")
+            hideMenu()
+        default: break
+        }
+    }
+    
+    @IBAction func menuBarButtonItem(_ sender: UIBarButtonItem) {
+        if AppDelegate.isMenuVC {
+            showMenu()
+        } else {
+            hideMenu()
+        }
+    }
+    
+    func showMenu() {
+        UIView.animate(withDuration: 0.3) {
+            self.menuVC.view.frame = CGRect (x: 0, y: 60, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.height)
+            self.addChildViewController(self.menuVC)
+            self.view.addSubview(self.menuVC.view)
+            AppDelegate.isMenuVC = false
+        }
+    }
+    
+    func hideMenu() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.menuVC.view.frame = CGRect (x: -UIScreen.main.bounds.size.width, y: 60, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.height)
+        }) { (finished) in
+            self.menuVC.view.removeFromSuperview()
+            AppDelegate.isMenuVC = true
+        }
+    }
+    /* Вынести в отдельные классы и переделать во View!
+     
+     
+     */
+    /*
+     
+     */
     
 }
 
