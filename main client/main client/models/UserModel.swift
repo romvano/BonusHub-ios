@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class UserModel {
+class UserModel: NSObject {
     let uid: String
     var login: String
     
