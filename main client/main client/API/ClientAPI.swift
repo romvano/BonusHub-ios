@@ -103,6 +103,26 @@ class ClientAPI {
         }
     }
     
-    // TODO: get info (client)
+    func getClientInfo(onResult: @escaping(Int?, UserModel?) -> Void) {
+        Alamofire.request(CLIENT_URL + "get_info/", method: .get).responseJSON { response in
+            guard response.result.error == nil else {
+                onResult(nil, nil)
+                return
+            }
+            
+            let code = response.response?.statusCode
+            guard code == API.OK else {
+                onResult(response.response!.statusCode, nil)
+                return
+            }
+            
+            let data = response.result.value as? NSDictionary
+            let user_uid = data?.object(forKey: "user_id") as? String
+            let login = data?.object(forKey: "name") as? String
+            let user = UserModel(uid: user_uid, login: login)
+            user?.saveLocally()
+            onResult(code, user)
+        }
+    }
     // TODO: media
 }
