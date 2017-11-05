@@ -12,6 +12,7 @@
 		092E54451FA7595600573158 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E54441FA7595600573158 /* LogInViewController.swift */; };
 		092E54471FA7597900573158 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E54461FA7597900573158 /* SignUpViewController.swift */; };
 		092E544D1FA76B9F00573158 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E544C1FA76B9F00573158 /* NavigationController.swift */; };
+		09906A2B1FAE826E00A28D73 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2A1FAE826E00A28D73 /* KeychainPasswordItem.swift */; };
 		99A7AE661F8FA4B000964402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE651F8FA4B000964402 /* AppDelegate.swift */; };
 		99A7AE681F8FA4B000964402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE671F8FA4B000964402 /* ViewController.swift */; };
 		99A7AE6B1F8FA4B000964402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A7AE691F8FA4B000964402 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		092E54441FA7595600573158 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		092E54461FA7597900573158 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		092E544C1FA76B9F00573158 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		09906A2A1FAE826E00A28D73 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		99A7AE621F8FA4B000964402 /* main client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "main client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A7AE651F8FA4B000964402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99A7AE671F8FA4B000964402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				99A7AE6C1F8FA4B000964402 /* Assets.xcassets */,
 				99A7AE6E1F8FA4B000964402 /* LaunchScreen.storyboard */,
 				99A7AE711F8FA4B000964402 /* Info.plist */,
+				09906A2A1FAE826E00A28D73 /* KeychainPasswordItem.swift */,
 				092E544C1FA76B9F00573158 /* NavigationController.swift */,
 			);
 			path = "main client";
@@ -277,6 +280,7 @@
 				092E54471FA7597900573158 /* SignUpViewController.swift in Sources */,
 				99A7AE681F8FA4B000964402 /* ViewController.swift in Sources */,
 				092E54411FA7432B00573158 /* MenuViewController.swift in Sources */,
+				09906A2B1FAE826E00A28D73 /* KeychainPasswordItem.swift in Sources */,
 				092E54431FA7436D00573158 /* MenuTableViewCell.swift in Sources */,
 				092E54451FA7595600573158 /* LogInViewController.swift in Sources */,
 				092E544D1FA76B9F00573158 /* NavigationController.swift in Sources */,
