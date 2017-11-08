@@ -7,21 +7,24 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
-class HostModel {
-    var uid: String
-    var title: String
-    var description: String?
-    var address: String?
-    var latitude: Float64?
-    var longitude: Float64?
-    var offer: String?
-    var timeOpen: Date?
-    var timeClose: Date?
-    var profileImage: NSURL?
-    var points: Float
-    var loyalityType: Int
-    var loyalityParam: Int
+
+class HostModel: Object {
+    var uid: String = "000000000000000000000001"
+    var title: String = ""
+    @objc dynamic var descr: String? = nil
+    @objc dynamic var address: String? = nil
+    var latitude = RealmOptional<Float64>()
+    var longitude = RealmOptional<Float64>()
+    @objc dynamic var offer: String? = nil
+    @objc dynamic var timeOpen: Date? = nil
+    @objc dynamic var timeClose: Date? = nil
+    @objc dynamic var profileImage: String? = nil
+    @objc dynamic var points: Float = 0
+    @objc dynamic var loyalityType: Int = 1
+    @objc dynamic var loyalityParam: Int = 10
     
     init? (uid: String?, title: String?, description: String?, address: String?,
            latitude: Float64?, longitude: Float64?, offer: String?,
@@ -30,21 +33,34 @@ class HostModel {
         guard isObjectId(s: uid), title != nil, points != nil, loyalityType != nil, loyalityParam != nil else {
             return nil
         }
+        super.init()
         self.uid = uid!
         self.title = title!
-        self.description = description
+        self.descr = description
         self.address = address
-        self.latitude = latitude
-        self.longitude = longitude
+        self.latitude = RealmOptional<Float64>(latitude)
+        self.longitude = RealmOptional<Float64>(longitude)
         self.offer = offer
         self.timeOpen = timeOpen
         self.timeClose = timeClose
-        self.profileImage = profileImage
+        self.profileImage = profileImage?.absoluteString
         self.points = points!
         self.loyalityType = loyalityType!
         self.loyalityParam = loyalityParam!
     }
     
+    required init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
+    }
+    
+    required init() {
+        super.init()
+    }
+    
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
+    }
+
     func saveLocally() {
         
     }

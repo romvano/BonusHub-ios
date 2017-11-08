@@ -9,9 +9,14 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import RealmSwift
 
 class ClientAPI {
-    let CLIENT_URL = API.BASE_URL + "client/"
+    private let CLIENT_URL = API.BASE_URL + "client/"
+    
+    var url: String {
+        return CLIENT_URL
+    }
     
     private func _parseHost(data: NSDictionary?) -> HostModel? {
         guard data != nil else {
@@ -73,7 +78,7 @@ class ClientAPI {
         }
     }
     
-    func listHosts(onResult: @escaping(Int?, NSArray?) -> Void) {
+    func listHosts(onResult: @escaping(Int?, HostArrayModel?) -> Void) {
             Alamofire.request(CLIENT_URL + "list_hosts/", method: .get).responseJSON { response in
                 guard response.result.error == nil else {
                     onResult(nil, nil)
@@ -92,15 +97,16 @@ class ClientAPI {
                     return
                 }
                 
-                let hosts = NSMutableArray()
+                let hosts = List<HostModel>()
                 for el in list! {
                     let data = el as? NSDictionary
                     if let host = self._parseHost(data: data) {
-                        hosts.add(host)
+                        hosts.append(host)
                     }
                 }
-                HostArrayModel(arr: hosts).saveLocally()
-                onResult(code, hosts)
+                let hostList = HostArrayModel(arr: hosts)
+                hostList.saveLocally()
+                onResult(code, hostList)
         }
     }
     

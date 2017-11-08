@@ -7,22 +7,32 @@
 //
 
 import UIKit
-import Alamofire
+import Realm
+import RealmSwift
 
-class UserModel: NSObject {
-    let uid: String
-    var login: String
+class UserModel: Object {
+    var uid: String = "000000000000000000000001"
+    var login: String = ""
     
     init? (uid: String?, login: String?) {
         guard isObjectId(s: uid), login != nil else {
             return nil
         }
+        super.init()
         self.uid = uid!
         self.login = login!
     }
     
-    func fetch() {
-        
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
+    }
+    
+    required init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
+    }
+    
+    required init() {
+        super.init()
     }
     
     func saveLocally() {

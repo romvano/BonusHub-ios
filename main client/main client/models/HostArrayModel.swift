@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class HostArrayModel {
-    var hostArray: NSMutableArray
+    var hostArray: List<HostModel>
     
-    init (arr: NSMutableArray) {
-        self.hostArray = arr
+    init (arr: List<HostModel>) {
+        self.hostArray = List<HostModel>()
+        for el in arr {
+            self.hostArray.append(el)
+        }
     }
     
     func saveLocally() {
