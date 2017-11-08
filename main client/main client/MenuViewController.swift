@@ -12,7 +12,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var menuTableView: UITableView!
     
-    let myTitle = ["one", "two", "three"]
+    public let myTitle = ["User profile", "User places", "Map"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

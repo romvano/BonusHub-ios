@@ -19,8 +19,15 @@ class MenuTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+        // IndexPath.row?
+        // myTitle[2]?
+        if self.labelText.text == "Map" {
+            if AppDelegate.isMap {
+                
+            }
+        }
+        
         // Configure the view for the selected state
     }
-
 }
