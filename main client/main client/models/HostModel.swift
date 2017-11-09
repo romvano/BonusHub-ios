@@ -62,6 +62,35 @@ class HostModel: Object {
     }
 
     func saveLocally() {
-        
+        let realm = try! Realm()
+        let host = realm.objects(HostModel.self).filter("uid == \(self.uid)").first
+        try! realm.write {
+            if host == nil {
+                realm.add(self)
+                return
+            }
+            host!.title = self.title
+            host!.descr = self.descr
+            host!.address = self.address
+            host!.latitude = self.latitude
+            host!.longitude = self.longitude
+            host!.offer = self.offer
+            host!.timeOpen = self.timeOpen
+            host!.timeClose = self.timeClose
+            host!.profileImage = self.profileImage
+            host!.points = self.points
+            host!.loyalityType = self.loyalityType
+            host!.loyalityParam = self.loyalityParam
+        }
     }
+    
+    static func load(uid: String) -> HostModel? {
+        guard isObjectId(s: uid) else {
+            return nil
+        }
+        let realm = try! Realm()
+        let host = realm.objects(self).filter("uid == \(uid)").first
+        return host
+    }
+
 }

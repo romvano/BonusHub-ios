@@ -36,7 +36,22 @@ class UserModel: Object {
     }
     
     func saveLocally() {
-        
+        let realm = try! Realm()
+        try! realm.write {
+            let user = realm.objects(UserModel.self).first
+            if user == nil {
+                realm.add(self)
+                return
+            }
+            user!.uid = self.uid
+            user!.login = self.login
+        }
+    }
+    
+    static func load() -> UserModel? {
+        let realm = try! Realm()
+        let user = realm.objects(self).first
+        return user
     }
     
 }

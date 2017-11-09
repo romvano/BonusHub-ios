@@ -102,6 +102,7 @@ class UserAPI {
                 return
             }
             
+            cleanRealm()
             onResult(code)
         }
     }

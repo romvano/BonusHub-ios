@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 let OBJECT_ID_LENGTH = 24
 
@@ -20,4 +22,9 @@ func isObjectId(s: String?) -> Bool {
         }
     }
     return true
+}
+
+func cleanRealm() {
+    let realm = try! Realm()
+    realm.deleteAll()
 }
