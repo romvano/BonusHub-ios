@@ -9,9 +9,15 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import Realm
+import RealmSwift
 
 class ClientAPI {
-    let CLIENT_URL = API.BASE_URL + "client/"
+    private let CLIENT_URL = API.BASE_URL + "client/"
+    
+    var url: String {
+        return CLIENT_URL
+    }
     
     private func _parseHost(data: NSDictionary?) -> HostModel? {
         guard data != nil else {
@@ -51,6 +57,15 @@ class ClientAPI {
     }
     
     func getHost(hostUid: String, onResult: @escaping(Int?, HostModel?) -> Void) {
+        /*
+         * Returns:
+         *     (nil, nil) if request failed
+         *     (200, HostModel) if ok
+         *     (200, nil) if host cannot be parsed
+         *     (404, nil) if no such host in db
+         *     (401, nil) if user not authed
+         */
+        
         let params: Parameters = [
             "host_id": hostUid
         ]
@@ -73,38 +88,53 @@ class ClientAPI {
         }
     }
     
-    func listHosts(onResult: @escaping(Int?, NSArray?) -> Void) {
-            Alamofire.request(CLIENT_URL + "list_hosts/", method: .get).responseJSON { response in
-                guard response.result.error == nil else {
-                    onResult(nil, nil)
-                    return
+    func listHosts(onResult: @escaping(Int?, List<HostModel>?) -> Void) {
+        /*
+         * Returns:
+         *     (nil, nil) if request failed
+         *     (200, List<HostModel>) if ok - List can be empty
+         *     (200, nil) if response cannot be parsed
+         *     (401, nil) if user not authed
+         */
+        Alamofire.request(CLIENT_URL + "list_hosts/", method: .get).responseJSON { response in
+            guard response.result.error == nil else {
+                onResult(nil, nil)
+                return
+            }
+            
+            let code = response.response?.statusCode
+            guard code == API.OK else {
+                onResult(code, nil)
+                return
+            }
+            
+            let list = response.result.value as? NSArray
+            guard list != nil else {
+                onResult(code, nil)
+                return
+            }
+            
+            let hosts = List<HostModel>()
+            for el in list! {
+                let data = el as? NSDictionary
+                if let host = self._parseHost(data: data) {
+                    hosts.append(host)
                 }
-                
-                let code = response.response?.statusCode
-                guard code == API.OK else {
-                    onResult(code, nil)
-                    return
-                }
-                
-                let list = response.result.value as? NSArray
-                guard list != nil else {
-                    onResult(code, nil)
-                    return
-                }
-                
-                let hosts = NSMutableArray()
-                for el in list! {
-                    let data = el as? NSDictionary
-                    if let host = self._parseHost(data: data) {
-                        hosts.add(host)
-                    }
-                }
-                HostArrayModel(arr: hosts).saveLocally()
-                onResult(code, hosts)
+            }
+            let ham = HostArrayModel(arr: hosts)
+            ham.saveLocally()
+            onResult(code, hosts)
         }
     }
     
     func getClientInfo(onResult: @escaping(Int?, UserModel?) -> Void) {
+        /*
+         * Returns:
+         *     (nil, nil) if request failed
+         *     (200, UserModel) if ok
+         *     (200, nil) if response cannot be parsed
+         *     (401, nil) if user not authed
+         */
         Alamofire.request(CLIENT_URL + "get_info/", method: .get).responseJSON { response in
             guard response.result.error == nil else {
                 onResult(nil, nil)
@@ -118,7 +148,7 @@ class ClientAPI {
             }
             
             let data = response.result.value as? NSDictionary
-            let user_uid = data?.object(forKey: "user_id") as? String
+            let user_uid = data?.object(forKey: "identificator") as? String
             let login = data?.object(forKey: "name") as? String
             let user = UserModel(uid: user_uid, login: login)
             user?.saveLocally()
@@ -127,6 +157,13 @@ class ClientAPI {
     }
 
     func getHostLogo(hostUid: String, onResult: @escaping(Int?, Image?) -> Void) {
+        /*
+         * Returns:
+         *     (nil, nil) if request failed
+         *     (200, Image) if ok - List can be empty
+         *     (200, nil) if response cannot be parsed
+         *     (404, nil) if no such image
+         */
         let url = URLRequest(url: URL(string: CLIENT_URL + "media/" + hostUid)!)
         Alamofire.request(url).responseImage { response in
             guard response.result.error == nil else {

@@ -10,7 +10,11 @@ import UIKit
 import Alamofire
 
 class UserAPI {
-    let USER_URL = API.BASE_URL + "user/"
+    private let USER_URL = API.BASE_URL + "user/"
+    
+    var url: String {
+        return USER_URL
+    }
     
     func login(login: String, pwd: String, onResult: @escaping(Int?, UserModel?) -> Void) {
         /*
@@ -44,7 +48,7 @@ class UserAPI {
         }
     }
     
-    func register(login: String!, pwd: String!, onResult: @escaping(Int?) -> Void) {
+    func register(login: String, pwd: String, onResult: @escaping(Int?) -> Void) {
         /*
          * Returns:
          *     nil if request failed
@@ -98,6 +102,7 @@ class UserAPI {
                 return
             }
             
+            cleanRealm()
             onResult(code)
         }
     }
