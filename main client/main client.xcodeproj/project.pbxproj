@@ -25,6 +25,8 @@
 		849343431FBBD894001E663E /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849343421FBBD894001E663E /* MyProfileViewController.swift */; };
 		849343451FBBD93E001E663E /* MyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849343441FBBD93E001E663E /* MyPlacesViewController.swift */; };
 		849343471FBBD963001E663E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849343461FBBD963001E663E /* PlacesViewController.swift */; };
+		849343491FBBEE37001E663E /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849343481FBBEE37001E663E /* FAQViewController.swift */; };
+		8493434B1FBBEE4F001E663E /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493434A1FBBEE4F001E663E /* OptionsViewController.swift */; };
 		99A7AE661F8FA4B000964402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE651F8FA4B000964402 /* AppDelegate.swift */; };
 		99A7AE681F8FA4B000964402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE671F8FA4B000964402 /* ViewController.swift */; };
 		99A7AE6B1F8FA4B000964402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A7AE691F8FA4B000964402 /* Main.storyboard */; };
@@ -71,6 +73,8 @@
 		849343421FBBD894001E663E /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		849343441FBBD93E001E663E /* MyPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesViewController.swift; sourceTree = "<group>"; };
 		849343461FBBD963001E663E /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		849343481FBBEE37001E663E /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		8493434A1FBBEE4F001E663E /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		99A7AE621F8FA4B000964402 /* main client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "main client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A7AE651F8FA4B000964402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99A7AE671F8FA4B000964402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				092E54401FA7432B00573158 /* MenuViewController.swift */,
 				092E54421FA7436D00573158 /* MenuTableViewCell.swift */,
 				99A7AE691F8FA4B000964402 /* Main.storyboard */,
+				849343481FBBEE37001E663E /* FAQViewController.swift */,
+				8493434A1FBBEE4F001E663E /* OptionsViewController.swift */,
 				849343401FBBC614001E663E /* MainViewController.swift */,
 				092E54441FA7595600573158 /* LogInViewController.swift */,
 				092E54461FA7597900573158 /* SignUpViewController.swift */,
@@ -412,6 +418,7 @@
 				092E54471FA7597900573158 /* SignUpViewController.swift in Sources */,
 				99A7AE681F8FA4B000964402 /* ViewController.swift in Sources */,
 				849343451FBBD93E001E663E /* MyPlacesViewController.swift in Sources */,
+				8493434B1FBBEE4F001E663E /* OptionsViewController.swift in Sources */,
 				092E54411FA7432B00573158 /* MenuViewController.swift in Sources */,
 				09906A2B1FAE826E00A28D73 /* KeychainPasswordItem.swift in Sources */,
 				092E54431FA7436D00573158 /* MenuTableViewCell.swift in Sources */,
@@ -422,6 +429,7 @@
 				092E544D1FA76B9F00573158 /* NavigationController.swift in Sources */,
 				99A7AE661F8FA4B000964402 /* AppDelegate.swift in Sources */,
 				8493433F1FACED78001E663E /* HostArrayModel.swift in Sources */,
+				849343491FBBEE37001E663E /* FAQViewController.swift in Sources */,
 				849293F81FAB3B7E001F0B92 /* HostModel.swift in Sources */,
 				849343471FBBD963001E663E /* PlacesViewController.swift in Sources */,
 				849293F41FAB3A81001F0B92 /* UserAPI.swift in Sources */,

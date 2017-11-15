@@ -1,5 +1,5 @@
 //
-//  MyPlacesViewController.swift
+//  OptionsViewController.swift
 //  main client
 //
 //  Created by Admin on 15.11.17.
@@ -8,21 +8,23 @@
 
 import UIKit
 
-class MyPlacesViewController: UIViewController {
+class OptionsViewController: UIViewController {
 
-    @IBOutlet weak var MyPlacesSearchBar: UISearchBar!
-    @IBOutlet weak var MyPlacesTableView: UITableView!
+    @IBOutlet weak var Options: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
 
     // Добавить Cells
-    // Сделать Поиск по MyPlacesTableView
+    // Добавить под них опции в Options
 
 }
