@@ -8,18 +8,53 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
-class MapsViewController: UIViewController {
+class MapsViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var map: MKMapView!
+    let manager = CLLocationManager()
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0] //самое последнее местоположение
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.007, 0.007) // увеличение карты
+        let userLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(userLocation, span)
+        
+        map.setRegion(region, animated: true)
+        
+        self.map.showsUserLocation = true
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //положение по координатам, для мест
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.007, 0.007) // увеличение карты
-        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(55.771101, 37.691433)
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(55.795932, 37.804852)
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         map.setRegion(region, animated: true)
+        //для отметки
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "pin"
+        annotation.subtitle = "10-20"
+        //annotation.image
+        
+        map.addAnnotation(annotation)
+        
+        //местоположение пользователя
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+        //let pin = MKPinAnnotationView()
+       // map.addAnnotation(pin)
+        
         
         
         

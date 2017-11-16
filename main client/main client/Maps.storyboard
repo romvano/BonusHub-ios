@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P4Z-Gj-nj6">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,19 +17,24 @@
                         <viewControllerLayoutGuide type="bottom" id="yE7-FD-MqJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aLN-WK-j1h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-eI-Nja">
-                                <rect key="frame" x="0.0" y="47" width="375" height="620"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8f-3W-gNh">
+                                <rect key="frame" x="158" y="334" width="98" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="-" image="ic_qu_direction_mylocation.png"/>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-eI-Nja">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="IEJ-eI-Nja" secondAttribute="trailing" id="2wh-3b-2F8"/>
-                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="top" secondItem="aLN-WK-j1h" secondAttribute="top" constant="47" id="HUc-xg-YKC"/>
-                            <constraint firstItem="yE7-FD-MqJ" firstAttribute="top" secondItem="IEJ-eI-Nja" secondAttribute="bottom" id="NnV-K2-CQm"/>
-                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="leading" secondItem="aLN-WK-j1h" secondAttribute="leading" id="pWN-Zv-d2L"/>
+                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="leading" secondItem="aLN-WK-j1h" secondAttribute="leading" id="1mh-yz-2Qc"/>
+                            <constraint firstAttribute="trailing" secondItem="IEJ-eI-Nja" secondAttribute="trailing" id="JAA-QW-tQK"/>
+                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="top" secondItem="nec-Ry-d3H" secondAttribute="bottom" id="KEK-ex-vp4"/>
+                            <constraint firstItem="yE7-FD-MqJ" firstAttribute="top" secondItem="IEJ-eI-Nja" secondAttribute="bottom" id="PdG-Hr-P6p"/>
                         </constraints>
                     </view>
                     <connections>
@@ -38,7 +43,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8a-2W-oMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768.1159420289855" y="361.14130434782612"/>
+            <point key="canvasLocation" x="2766.666666666667" y="361.14130434782612"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_qu_direction_mylocation.png" width="24" height="24"/>
+    </resources>
 </document>
