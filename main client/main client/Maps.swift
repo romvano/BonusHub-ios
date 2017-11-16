@@ -16,6 +16,9 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var map: MKMapView!
     let manager = CLLocationManager()
     
+    @IBAction func myLocation(_ sender: Any) {
+        
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0] //самое последнее местоположение
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.007, 0.007) // увеличение карты

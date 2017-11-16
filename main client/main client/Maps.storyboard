@@ -20,21 +20,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8f-3W-gNh">
-                                <rect key="frame" x="158" y="334" width="98" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="-" image="ic_qu_direction_mylocation.png"/>
-                            </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-eI-Nja">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-eI-Nja">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8f-3W-gNh">
+                                <rect key="frame" x="266" y="573" width="98" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="pinicon"/>
+                                <connections>
+                                    <action selector="locationButton:" destination="P4Z-Gj-nj6" eventType="touchUpInside" id="Feg-MM-bgt"/>
+                                    <action selector="myLocation:" destination="P4Z-Gj-nj6" eventType="touchUpInside" id="oDv-pO-act"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="leading" secondItem="aLN-WK-j1h" secondAttribute="leading" id="1mh-yz-2Qc"/>
-                            <constraint firstAttribute="trailing" secondItem="IEJ-eI-Nja" secondAttribute="trailing" id="JAA-QW-tQK"/>
-                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="top" secondItem="nec-Ry-d3H" secondAttribute="bottom" id="KEK-ex-vp4"/>
-                            <constraint firstItem="yE7-FD-MqJ" firstAttribute="top" secondItem="IEJ-eI-Nja" secondAttribute="bottom" id="PdG-Hr-P6p"/>
+                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="top" secondItem="aLN-WK-j1h" secondAttribute="top" id="ZW7-nj-UNo"/>
+                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="leading" secondItem="aLN-WK-j1h" secondAttribute="leading" id="Zfz-2K-xP9"/>
+                            <constraint firstItem="yE7-FD-MqJ" firstAttribute="top" secondItem="IEJ-eI-Nja" secondAttribute="bottom" id="bAS-QE-Gnw"/>
+                            <constraint firstAttribute="trailing" secondItem="IEJ-eI-Nja" secondAttribute="trailing" id="q94-9H-v5u"/>
                         </constraints>
                     </view>
                     <connections>
@@ -47,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_qu_direction_mylocation.png" width="24" height="24"/>
+        <image name="pinicon" width="341" height="341"/>
     </resources>
 </document>
