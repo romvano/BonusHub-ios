@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P4Z-Gj-nj6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Maps View Controller-->
+        <scene sceneID="5Zq-dl-cwQ">
+            <objects>
+                <viewController id="P4Z-Gj-nj6" customClass="MapsViewController" customModule="main_client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nec-Ry-d3H"/>
+                        <viewControllerLayoutGuide type="bottom" id="yE7-FD-MqJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aLN-WK-j1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-eI-Nja">
+                                <rect key="frame" x="0.0" y="47" width="375" height="620"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="IEJ-eI-Nja" secondAttribute="trailing" id="2wh-3b-2F8"/>
+                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="top" secondItem="aLN-WK-j1h" secondAttribute="top" constant="47" id="HUc-xg-YKC"/>
+                            <constraint firstItem="yE7-FD-MqJ" firstAttribute="top" secondItem="IEJ-eI-Nja" secondAttribute="bottom" id="NnV-K2-CQm"/>
+                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="leading" secondItem="aLN-WK-j1h" secondAttribute="leading" id="pWN-Zv-d2L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="IEJ-eI-Nja" id="rOP-Do-miE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8a-2W-oMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2768.1159420289855" y="361.14130434782612"/>
+        </scene>
+    </scenes>
+</document>

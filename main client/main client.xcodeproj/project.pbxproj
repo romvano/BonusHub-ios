@@ -34,6 +34,8 @@
 		99A7AE701F8FA4B000964402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A7AE6E1F8FA4B000964402 /* LaunchScreen.storyboard */; };
 		99A7AE7B1F8FA4B000964402 /* main_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE7A1F8FA4B000964402 /* main_clientTests.swift */; };
 		99A7AE861F8FA4B000964402 /* main_clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE851F8FA4B000964402 /* main_clientUITests.swift */; };
+		99B103471FBDBA830016A87E /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B103461FBDBA830016A87E /* Maps.storyboard */; };
+		99B103491FBDBC3D0016A87E /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B103481FBDBC3D0016A87E /* Maps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		99A7AE811F8FA4B000964402 /* main clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "main clientUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A7AE851F8FA4B000964402 /* main_clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main_clientUITests.swift; sourceTree = "<group>"; };
 		99A7AE871F8FA4B000964402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99B103461FBDBA830016A87E /* Maps.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
+		99B103481FBDBC3D0016A87E /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		CB9B3A5A422A3EEEC21C8938 /* Pods_main_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_main_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -176,6 +180,8 @@
 				99A7AE651F8FA4B000964402 /* AppDelegate.swift */,
 				849343421FBBD894001E663E /* MyProfileViewController.swift */,
 				99A7AE671F8FA4B000964402 /* ViewController.swift */,
+				99B103461FBDBA830016A87E /* Maps.storyboard */,
+				99B103481FBDBC3D0016A87E /* Maps.swift */,
 				092E54401FA7432B00573158 /* MenuViewController.swift */,
 				092E54421FA7436D00573158 /* MenuTableViewCell.swift */,
 				99A7AE691F8FA4B000964402 /* Main.storyboard */,
@@ -335,6 +341,7 @@
 				99A7AE701F8FA4B000964402 /* LaunchScreen.storyboard in Resources */,
 				99A7AE6D1F8FA4B000964402 /* Assets.xcassets in Resources */,
 				99A7AE6B1F8FA4B000964402 /* Main.storyboard in Resources */,
+				99B103471FBDBA830016A87E /* Maps.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,9 +368,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-main client/Pods-main client-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -423,6 +434,7 @@
 				09906A2B1FAE826E00A28D73 /* KeychainPasswordItem.swift in Sources */,
 				092E54431FA7436D00573158 /* MenuTableViewCell.swift in Sources */,
 				849293F51FAB3A81001F0B92 /* common.swift in Sources */,
+				99B103491FBDBC3D0016A87E /* Maps.swift in Sources */,
 				849293F31FAB3A81001F0B92 /* APIConstants.swift in Sources */,
 				849343411FBBC614001E663E /* MainViewController.swift in Sources */,
 				092E54451FA7595600573158 /* LogInViewController.swift in Sources */,
@@ -603,7 +615,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 34PL8GRUEQ;
 				INFOPLIST_FILE = "main client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tonitrui.main-client";
@@ -619,7 +631,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 34PL8GRUEQ;
 				INFOPLIST_FILE = "main client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tonitrui.main-client";

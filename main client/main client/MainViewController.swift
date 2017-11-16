@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
      
         // тень menuView на MainViewController
-        leadingConstraint.constant = -200
+        leadingConstraint.constant = -206
         menuView.layer.shadowOpacity = 1
         menuView.layer.shadowRadius = 6
         // Do any additional setup after loading the view.
@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     
     @IBAction func openMenu (_ sender : Any) {
         if (menuShowing) {
-            leadingConstraint.constant = -200
+            leadingConstraint.constant = -206
         } else {
             leadingConstraint.constant = 0
             
