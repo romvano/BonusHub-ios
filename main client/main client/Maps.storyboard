@@ -23,22 +23,26 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-eI-Nja">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8f-3W-gNh">
-                                <rect key="frame" x="266" y="573" width="98" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="pinicon"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50D-hU-3lc">
+                                <rect key="frame" x="305" y="608" width="73" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="2h0-Rp-Pyc"/>
+                                    <constraint firstAttribute="height" constant="69" id="fbk-MU-dqa"/>
+                                </constraints>
+                                <state key="normal" image="location-icon"/>
                                 <connections>
-                                    <action selector="locationButton:" destination="P4Z-Gj-nj6" eventType="touchUpInside" id="Feg-MM-bgt"/>
-                                    <action selector="myLocation:" destination="P4Z-Gj-nj6" eventType="touchUpInside" id="oDv-pO-act"/>
+                                    <action selector="myLocation:" destination="P4Z-Gj-nj6" eventType="touchUpInside" id="YY6-PH-hKU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="top" secondItem="aLN-WK-j1h" secondAttribute="top" id="ZW7-nj-UNo"/>
-                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="leading" secondItem="aLN-WK-j1h" secondAttribute="leading" id="Zfz-2K-xP9"/>
-                            <constraint firstItem="yE7-FD-MqJ" firstAttribute="top" secondItem="IEJ-eI-Nja" secondAttribute="bottom" id="bAS-QE-Gnw"/>
-                            <constraint firstAttribute="trailing" secondItem="IEJ-eI-Nja" secondAttribute="trailing" id="q94-9H-v5u"/>
+                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="leading" secondItem="aLN-WK-j1h" secondAttribute="leading" id="7yM-WW-nVy"/>
+                            <constraint firstItem="IEJ-eI-Nja" firstAttribute="top" secondItem="aLN-WK-j1h" secondAttribute="top" id="GLO-3D-zQH"/>
+                            <constraint firstAttribute="trailing" secondItem="50D-hU-3lc" secondAttribute="trailing" constant="36" id="QaM-Ij-pjJ"/>
+                            <constraint firstAttribute="trailing" secondItem="IEJ-eI-Nja" secondAttribute="trailing" id="Zoh-w7-bRL"/>
+                            <constraint firstItem="yE7-FD-MqJ" firstAttribute="top" secondItem="IEJ-eI-Nja" secondAttribute="bottom" id="m7W-TR-Mqg"/>
+                            <constraint firstItem="yE7-FD-MqJ" firstAttribute="top" secondItem="50D-hU-3lc" secondAttribute="bottom" constant="59" id="xBo-Ey-IZw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -47,10 +51,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8a-2W-oMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2766.666666666667" y="361.14130434782612"/>
+            <point key="canvasLocation" x="2330.434782608696" y="359.51086956521743"/>
         </scene>
     </scenes>
     <resources>
-        <image name="pinicon" width="341" height="341"/>
+        <image name="location-icon" width="85" height="85"/>
     </resources>
 </document>

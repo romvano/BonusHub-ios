@@ -15,20 +15,32 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var map: MKMapView!
     let manager = CLLocationManager()
+    var locationManager : CLLocationManager! = CLLocationManager()
+    var startLocation: CLLocation!
+    var flag = false
     
+
     @IBAction func myLocation(_ sender: Any) {
+        flag = true
+        startLocation = nil
+        locationManager.startUpdatingLocation()
         
     }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0] //самое последнее местоположение
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.007, 0.007) // увеличение карты
-        let userLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(userLocation, span)
-        
-        map.setRegion(region, animated: true)
-        
-        self.map.showsUserLocation = true
-        
+        if flag
+        {
+            let location = locations[0] //самое последнее местоположение
+            let span:MKCoordinateSpan = MKCoordinateSpanMake(0.007, 0.007) // увеличение карты
+            let userLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            let region1:MKCoordinateRegion = MKCoordinateRegionMake(userLocation, span)
+            
+            map.setRegion(region1, animated: true)
+            
+      
+            self.map.showsUserLocation = true
+            flag = false
+        }
     }
     
     override func viewDidLoad() {
