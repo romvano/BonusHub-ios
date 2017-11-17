@@ -17,7 +17,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     var locationManager : CLLocationManager! = CLLocationManager()
     var startLocation: CLLocation!
-    var flag = false
+    var flag = true
     
 
     @IBAction func myLocation(_ sender: Any) {
