@@ -29,4 +29,4 @@
 6.	Начисление и списание бонусов
 
 
-<pre>P.S: ссылка на презентацию: https://prezi.com/view/XLHwId5vO1K07oDjlzaW/</pre>
+P.S: ссылка на презентацию: https://prezi.com/view/XLHwId5vO1K07oDjlzaW/
