@@ -12,6 +12,9 @@ import Alamofire
 class UserAPI {
     let USER_URL = API.BASE_URL + "user/"
     
+    /**
+     *
+     */
     func login(login: String, pwd: String, onResult: @escaping(Int?, UserModel?) -> Void) {
         /*
          * Returns:

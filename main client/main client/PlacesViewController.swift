@@ -23,5 +23,10 @@ class PlacesViewController: UIViewController {
     
 
     // Прикрутить карты
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "") {
+            let destController = segue.destination as? MapsViewController
+            destController?.flag = true
+        }
+    }
 }
