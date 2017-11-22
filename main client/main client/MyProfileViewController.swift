@@ -16,7 +16,7 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        IdLabel.text = "147562"
+        
     }
 
     override func didReceiveMemoryWarning() {

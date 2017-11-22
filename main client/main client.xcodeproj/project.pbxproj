@@ -27,6 +27,8 @@
 		849343471FBBD963001E663E /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849343461FBBD963001E663E /* PlacesViewController.swift */; };
 		849343491FBBEE37001E663E /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849343481FBBEE37001E663E /* FAQViewController.swift */; };
 		8493434B1FBBEE4F001E663E /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493434A1FBBEE4F001E663E /* OptionsViewController.swift */; };
+		9911F2621FB3778E006AE3AA /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9911F2611FB3778E006AE3AA /* Maps.storyboard */; };
+		9911F2641FB377A1006AE3AA /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911F2631FB377A1006AE3AA /* Maps.swift */; };
 		99A7AE661F8FA4B000964402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE651F8FA4B000964402 /* AppDelegate.swift */; };
 		99A7AE681F8FA4B000964402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A7AE671F8FA4B000964402 /* ViewController.swift */; };
 		99A7AE6B1F8FA4B000964402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A7AE691F8FA4B000964402 /* Main.storyboard */; };
@@ -75,6 +77,8 @@
 		849343461FBBD963001E663E /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		849343481FBBEE37001E663E /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		8493434A1FBBEE4F001E663E /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		9911F2611FB3778E006AE3AA /* Maps.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
+		9911F2631FB377A1006AE3AA /* Maps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		99A7AE621F8FA4B000964402 /* main client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "main client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A7AE651F8FA4B000964402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99A7AE671F8FA4B000964402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 		99A7AE641F8FA4B000964402 /* main client */ = {
 			isa = PBXGroup;
 			children = (
+				9911F2631FB377A1006AE3AA /* Maps.swift */,
+				9911F2611FB3778E006AE3AA /* Maps.storyboard */,
 				849293ED1FAB3A81001F0B92 /* API */,
 				849293F01FAB3A81001F0B92 /* models */,
 				99A7AE651F8FA4B000964402 /* AppDelegate.swift */,
@@ -335,6 +341,7 @@
 				99A7AE701F8FA4B000964402 /* LaunchScreen.storyboard in Resources */,
 				99A7AE6D1F8FA4B000964402 /* Assets.xcassets in Resources */,
 				99A7AE6B1F8FA4B000964402 /* Main.storyboard in Resources */,
+				9911F2621FB3778E006AE3AA /* Maps.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,9 +368,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-main client/Pods-main client-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,11 +390,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-main client/Pods-main client-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -436,6 +451,7 @@
 				849343431FBBD894001E663E /* MyProfileViewController.swift in Sources */,
 				8493433D1FAB5A73001E663E /* ClientAPI.swift in Sources */,
 				849293F61FAB3A81001F0B92 /* UserModel.swift in Sources */,
+				9911F2641FB377A1006AE3AA /* Maps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
