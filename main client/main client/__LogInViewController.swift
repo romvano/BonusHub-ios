@@ -18,19 +18,19 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
-    var passwordItems: [KeychainPasswordItem] = []
+    /*var passwordItems: [KeychainPasswordItem] = []
     let createLoginButtonTag = 0  // пользователь на зарегистрирован
     let loginButtonTag = 1        // пользователь зарегистрирован
-    
+ 
     @IBOutlet weak var enterLoginField: UITextField!
     @IBOutlet weak var enterPasswordField: UITextField!
     @IBOutlet var logInButton: UIButton!
     @IBOutlet var createNewAccountButton: UIButton!  // убрать
-    @IBOutlet var createInfoLabel: UILabel! // доработать
+    @IBOutlet var createInfoLabel: UILabel! // доработать*/
     
     override func viewDidLoad() {
         
-        let hasLogin = UserDefaults.standard.bool(forKey: "hasLoginKey")
+        /*let hasLogin = UserDefaults.standard.bool(forKey: "hasLoginKey")
         
         // Пользователь зарегистрирован
         if hasLogin {
@@ -46,13 +46,13 @@ class LogInViewController: UIViewController {
         // Если username в keychain, то вписать его за пользователя в поле ввода логина
         if let storedUsername = UserDefaults.standard.value(forKey: "username") as? String {
             enterLoginField.text = storedUsername
-        }
+        }*/
         
         super.viewDidLoad()
     }
 
     
-    @IBAction func OnTapGestureRecognizer(_ sender: Any) {
+    /*@IBAction func OnTapGestureRecognizer(_ sender: Any) {
         enterLoginField.resignFirstResponder()
         enterPasswordField.resignFirstResponder()
     }
@@ -156,7 +156,7 @@ class LogInViewController: UIViewController {
                 present(alertView, animated: true, completion: nil)
             }
         }
-    }
+    }*/
 
 }
 

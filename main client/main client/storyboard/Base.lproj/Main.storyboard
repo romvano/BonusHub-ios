@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FzZ-kZ-Orn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,14 +9,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="BOT-df-HPr">
             <objects>
-                <viewController id="a0y-Sx-tRf" sceneMemberID="viewController">
+                <viewController id="a0y-Sx-tRf" customClass="LoginViewController" customModule="main_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9G7-qy-gy5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6MW-pP-U1B"/>
                     </view>
                 </viewController>
@@ -254,16 +253,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iq-I4-Ggh">
-                                <rect key="frame" x="93" y="30" width="189" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="jNo-61-WvE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="0.92682087420000003" green="0.86088031529999998" blue="0.75626164669999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csC-iO-eeZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csC-iO-eeZ">
                                 <rect key="frame" x="62" y="417" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.92682087420000003" green="0.86088031529999998" blue="0.75626164669999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -274,7 +264,7 @@
                                 <color key="textColor" red="0.48704663209999999" green="0.24331201599999999" blue="0.2530043018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ym-Xa-Hpc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ym-Xa-Hpc">
                                 <rect key="frame" x="62" y="137" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Gxq-Mv-2FN"/>
@@ -284,17 +274,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.48704663209999999" green="0.24331201599999999" blue="0.2530043018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4iq-I4-Ggh" firstAttribute="top" secondItem="Kdb-fA-U9M" secondAttribute="top" constant="10" id="1vg-ad-jqg"/>
-                            <constraint firstItem="4iq-I4-Ggh" firstAttribute="centerX" secondItem="MTI-ht-nD8" secondAttribute="centerX" id="31b-90-rK3"/>
                             <constraint firstItem="csC-iO-eeZ" firstAttribute="top" secondItem="0Ym-Xa-Hpc" secondAttribute="bottom" constant="30" id="RaM-wu-fu6"/>
-                            <constraint firstItem="0Ym-Xa-Hpc" firstAttribute="top" secondItem="4iq-I4-Ggh" secondAttribute="bottom" constant="50" id="jJY-FO-Ief"/>
-                            <constraint firstItem="4iq-I4-Ggh" firstAttribute="leading" secondItem="Kdb-fA-U9M" secondAttribute="leading" constant="93" id="qIE-15-9Dz"/>
-                            <constraint firstItem="4iq-I4-Ggh" firstAttribute="centerX" secondItem="csC-iO-eeZ" secondAttribute="centerX" id="qiP-FO-XfS"/>
-                            <constraint firstItem="4iq-I4-Ggh" firstAttribute="centerX" secondItem="0Ym-Xa-Hpc" secondAttribute="centerX" id="v9O-VW-RFd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kdb-fA-U9M"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Мой профиль" id="9TI-QQ-vMd"/>
+                    <tabBarItem key="tabBarItem" title="Мой профиль" id="9TI-QQ-vMd">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="IdLabel" destination="csC-iO-eeZ" id="5bZ-H8-gnm"/>
                         <outlet property="QRCodeImageView" destination="0Ym-Xa-Hpc" id="Yii-7y-6Ea"/>

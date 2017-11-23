@@ -12,6 +12,7 @@ class MyProfileViewController: UIViewController {
 
     @IBOutlet weak var QRCodeImageView: UIImageView!
     @IBOutlet weak var IdLabel: UILabel!
+    let loginViewController = LoginViewController()
     
     private func onGetInfoResult (code: Int?, user: UserModel?) {
         if code == API.OK && user != nil {
@@ -21,8 +22,8 @@ class MyProfileViewController: UIViewController {
         
         if code == API.NOT_AUTHED {
             // переход на экран логина + очистка кеша (cleanRealm())
-            
             cleanRealm()
+            //present(loginViewController, animated: true, completion: nil)
             return
         }
         
@@ -35,8 +36,8 @@ class MyProfileViewController: UIViewController {
         
         // if local storage doesn't contain a user model - login screen
         // aпереход на экран логина + очистка кеша
-        
         cleanRealm()
+        //present(loginViewController, animated: true, completion: nil)
     }
     
     private func render(id: String) {
@@ -45,7 +46,8 @@ class MyProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ClientAPI().getClientInfo(onResult: self.onGetInfoResult) // aхер с ним, пусть будет так
+        //present(loginViewController, animated: true, completion: nil)
+        //ClientAPI().getClientInfo(onResult: self.onGetInfoResult) // aхер с ним, пусть будет так
     }
 
     override func didReceiveMemoryWarning() {
