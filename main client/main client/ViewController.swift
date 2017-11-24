@@ -18,7 +18,7 @@ import UIKit
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
+//        menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipe))
         swipeRight.direction = .right

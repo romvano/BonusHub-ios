@@ -23,7 +23,7 @@ class MyProfileViewController: UIViewController {
         if code == API.NOT_AUTHED {
             // переход на экран логина + очистка кеша (cleanRealm())
             cleanRealm()
-            //present(loginViewController, animated: true, completion: nil)
+            present(loginViewController, animated: true, completion: nil)
             return
         }
         
@@ -35,9 +35,9 @@ class MyProfileViewController: UIViewController {
         }
         
         // if local storage doesn't contain a user model - login screen
-        // aпереход на экран логина + очистка кеша
+        // переход на экран логина + очистка кеша
         cleanRealm()
-        //present(loginViewController, animated: true, completion: nil)
+        present(loginViewController, animated: true, completion: nil)
     }
     
     private func render(id: String) {
